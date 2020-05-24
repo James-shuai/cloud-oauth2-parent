@@ -5,13 +5,13 @@ spring:
   application:
     name: zuul-gateway
   redis:
-    host: 39.96.167.196
-    password: yuanshuai
+    host: localhost
+    password: 123456
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://39.96.167.196:6001/eureka/
+      defaultZone: http://localhost:6001/eureka/
   instance:
     instanceId: ${spring.application.name}:${server.port} # 指定实例ID,页面会显示主机名
     preferIpAddress: true #访问路径可以显示IP地址

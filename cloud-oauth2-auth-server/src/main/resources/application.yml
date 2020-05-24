@@ -4,11 +4,11 @@ server:
     context-path: /auth
 spring:
   redis:
-    host: 39.96.167.196
-    password: yuanshuai
+    host: localhost
+    password: 123456
   datasource:
-    url: jdbc:mysql://cdb-6z1kjh7u.bj.tencentcdb.com:10217/ceshiauto?useUnicode=true&characterEncoding=utf8
-    username: auth
+    url: jdbc:mysql://localhost:3306/ceshiauto?useUnicode=true&characterEncoding=utf8
+    username: root
     password: yuanshuai0925
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
@@ -26,7 +26,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://39.96.167.196:6001/eureka/
+      defaultZone: http://localhost:6001/eureka/
   instance:
     instanceId: ${spring.application.name}:${server.port} # 指定实例ID,页面会显示主机名
     preferIpAddress: true #访问路径可以显示IP地址

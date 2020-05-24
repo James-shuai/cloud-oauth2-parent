@@ -138,6 +138,7 @@ public class SysUserController {
             JSONObject jsonObject = JSON.parseObject(request);
             QueryWrapper<SysUser> sysUserQueryWrapper = new QueryWrapper<>();
             sysUserQueryWrapper.eq("username", jsonObject.getString("username"));
+            sysUserQueryWrapper.eq("is_enabled",1);
             if (jsonObject.get("id")!=null&&StringUtils.isNotBlank(jsonObject.get("id").toString())){
                 sysUserQueryWrapper.ne("id", jsonObject.getString("id"));
             }

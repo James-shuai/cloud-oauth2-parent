@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>cloud-oauth2-parent</artifactId>
+    <groupId>com.cy</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>cloud-oauth2-auth-server</artifactId>
+  <dependencies>
+    <dependency>
+      <groupId>com.cy</groupId>
+      <artifactId>cloud-oauth2-base</artifactId>
+      <version>${cloud-security.version}</version>
+    </dependency>
+    <!--spring mvc相关的-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!-- Spring Security、OAuth2 和JWT等 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-oauth2</artifactId>
+    </dependency>
+    <!-- 注册到 Eureka-->
+    <dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>
+
+    <!-- redis-->
+    <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+
+    <!--mybatis-plus启动器-->
+    <dependency>
+    <groupId>com.baomidou</groupId>
+    <artifactId>mybatis-plus-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+
+    <!--druid连接池-->
+    <dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>druid</artifactId>
+    </dependency>
+    <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+
+    <!-- thymeleaf 模块启动器
+    <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+
+-->
+    <!--对Thymeleaf添加Spring Security标签支持
+    <dependency>
+    <groupId>org.thymeleaf.extras</groupId>
+    <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+    </dependency>
+    -->
+    <!-- springboot 单元测试 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
+    <!--热部署 ctrl+f9-->
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.boot</groupId>-->
+<!--      <artifactId>spring-boot-devtools</artifactId>-->
+<!--    </dependency>-->
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <!--启动类-->
+        <configuration>
+        <mainClass>com.cy.oauth2.AuthServerApplication</mainClass>
+        </configuration>
+
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.cy</groupId>
+  <artifactId>cloud-oauth2-parent</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>cloud-oauth2-base</module>
+    <module>cloud-oauth2-auth-server</module>
+    <module>cloud-oauth2-eureka</module>
+    <module>cloud-oauth2-gateway</module>
+    <module>cloud-oauth2-system</module>
+  </modules>
+
+  <packaging>pom</packaging>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.2.RELEASE</version>
+    <relativePath/>
+  </parent>
+  <properties>
+    <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <mybatis-plus.version>3.2.0</mybatis-plus.version>
+    <druid.version>1.1.10</druid.version>
+    <kaptcha.version>2.3.2</kaptcha.version>
+    <fastjson.version>1.2.58</fastjson.version>
+    <commons-lang.version>2.6</commons-lang.version>
+    <commons-collections.version>3.2.2</commons-collections.version>
+    <commons-io.version>2.6</commons-io.version>
+    <!-- 定义版本号, 子模块直接引用-->
+    <cloud-security.version>1.0-SNAPSHOT</cloud-security.version>
+  </properties>
+  <!--依赖声明-->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <!--maven不支持多继承，使用import来依赖管理配置-->
+        <scope>import</scope>
+      </dependency>
+      <!--mybatis-plus启动器-->
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
+      <!--druid连接池-->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>${druid.version}</version>
+      </dependency>
+      <!-- kaptcha 用于图形验证码 -->
+      <dependency>
+        <groupId>com.github.penggle</groupId>
+        <artifactId>kaptcha</artifactId>
+        <version>${kaptcha.version}</version>
+      </dependency>
+      <!-- 工具类依赖 -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>${commons-lang.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>${commons-collections.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>${commons-io.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <!--springboot 打包插件-->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+
+</project>

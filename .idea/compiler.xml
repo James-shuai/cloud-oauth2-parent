@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cloud-oauth2-base" />
+        <module name="cloud-oauth2-eureka" />
+        <module name="cloud-oauth2-gateway" />
+        <module name="cloud-oauth2-system" />
+        <module name="cloud-oauth2-auth-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mengxuegu-cloud-oauth2-resource-product" target="1.8" />
+      <module name="mengxuegu-cloud-oauth2-sso-client1" target="1.8" />
+      <module name="mengxuegu-cloud-oauth2-sso-client2" target="1.8" />
+      <module name="mengxuegu-cloud-oauth2-system" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cloud-oauth2-auth-server" options="-parameters" />
+      <module name="cloud-oauth2-base" options="-parameters" />
+      <module name="cloud-oauth2-eureka" options="-parameters" />
+      <module name="cloud-oauth2-gateway" options="-parameters" />
+      <module name="cloud-oauth2-system" options="-parameters" />
+      <module name="mengxuegu-cloud-oauth2-resource-product" options="-parameters" />
+      <module name="mengxuegu-cloud-oauth2-sso-client1" options="-parameters" />
+      <module name="mengxuegu-cloud-oauth2-sso-client2" options="-parameters" />
+    </option>
+  </component>
+</project>

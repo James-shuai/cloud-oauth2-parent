@@ -1,0 +1,45 @@
+server:
+  port: 7002
+
+spring:
+  application:
+    name: zuul-gateway
+  redis:
+    host: 39.96.167.196
+    password: yuanshuai
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://39.96.167.196:6001/eureka/
+  instance:
+    instanceId: ${spring.application.name}:${server.port} # 指定实例ID,页面会显示主机名
+    preferIpAddress: true #访问路径可以显示IP地址
+
+zuul: # 网关配置
+  #跨域核心
+  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
+  max:
+    host:
+      connections: 5000 #最大请求时间
+  host:  #等待
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
+  sensitive-headers: null # 默认Zuul认为请求头中 "Cookie", "Set-Cookie", "Authorization" 是敏感信息，它不会转发请求，因为把它设置为空，就会转发了
+  add-host-header: true # 正确的处理重定向操作
+  routes:
+    authentication: # 路由名称，名称任意，保持所有路由名称唯一
+      path: /auth/** # 访问路径，转发到 auth-server 服务处理
+      serviceId: auth-server # 指定服务ID，会自动从Eureka中找到此服务的ip和端口
+      stripPrefix: false # 代理转发时去掉前缀，false:代理转发时不去掉前缀 例如:为true时请求 /product/get/1，代理转发到/get/1
+    product: # 商品服务路由配置
+      path: /product/** # 转发到 product-server 服务处理
+      serviceId: product-server
+      stripPrefix: false
+    system: # 系统配置路由
+      path: /system/** # 转发到 product-server 服务处理
+      serviceId: system-server
+      stripPrefix: false
+ribbon:        #设置ribbon的超时时间小于zuul的超时时间
+  ReadTimeout: 10000
+  ConnectTimeout: 10000

@@ -1,0 +1,3 @@
+# Project exclude paths
+/cloud-oauth2-auth-server/target/
+/cloud-oauth2-base/target/

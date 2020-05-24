@@ -15,6 +15,6 @@ public class TestAuthApplication {
 
   @Test
   public void testPwd() {
-    System.out.println(passwordEncoder.encode("mengxuegu-secret"));
+    System.out.println(passwordEncoder.encode("cloud-secret"));
   }
 }

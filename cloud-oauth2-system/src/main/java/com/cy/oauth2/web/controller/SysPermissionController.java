@@ -3,10 +3,13 @@ package com.cy.oauth2.web.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.cy.oauth2.utils.AddressUtils;
+import com.cy.oauth2.utils.IpUtil;
 import com.cy.oauth2.web.entities.SysPermission;
 import com.cy.oauth2.web.service.SysPermissionService;
 import com.cy.base.result.ResultData;
 import org.apache.commons.lang.StringUtils;
+import org.apache.tomcat.jni.Address;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
 import java.security.Principal;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -36,8 +41,17 @@ public class SysPermissionController {
 
 
   @RequestMapping("/getNavMenu")
-  public Object getNavMenu(Principal principal){
-    return sysPermissionService.getNavMeny(principal);
+  public Object getNavMenu(Principal principal, HttpServletRequest request){
+    try {
+//      String ipAddr = IpUtil.getIpAddr(request);
+//      String temp = "ip="+ipAddr+"&accessKey=alibaba-inc";
+//      String addresses = AddressUtils.getAddresses(temp,"UTF-8");
+//      System.out.println("地址："+addresses);
+      return sysPermissionService.getNavMeny(principal);
+    } catch (Exception e) {
+      e.printStackTrace();
+      return null;
+    }
   }
 
 

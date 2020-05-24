@@ -38,4 +38,4 @@ mybatis-plus:
 # 日志级别，会打印sql语句
 logging:
   level:
-    com.mengxuegu.oauth2.web.mapper: debug
+    com.cy.oauth2.web.mapper: debug

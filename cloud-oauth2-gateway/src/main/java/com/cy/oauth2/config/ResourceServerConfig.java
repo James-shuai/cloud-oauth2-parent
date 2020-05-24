@@ -18,14 +18,14 @@ import org.springframework.web.cors.CorsUtils;
 public class ResourceServerConfig {
 
 
-  public static final String RESOURCE_ID = "product-server";
+  public static final String RESOURCE_ID = "system-server";
 
   @Autowired
   private TokenStore tokenStore;
 
 
   /**
-   * 认证资源服务器的资源
+   * 认证服务器资源
    */
   @EnableResourceServer
   @Configuration
@@ -47,37 +47,7 @@ public class ResourceServerConfig {
 
 
   /**
-   * 商品资源服务器的资源
-   */
-  @EnableResourceServer
-  @Configuration
-  public class ProductResourceServerConfig extends ResourceServerConfigurerAdapter {
-    @Override
-    public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-      resources
-        .resourceId(RESOURCE_ID) //资源服务器ID，认证服务端判断是否有该资源服务id的权限
-        .tokenStore(tokenStore) //校验token合法性
-      ;
-    }
-    @Override
-    public void configure(HttpSecurity http) throws Exception {
-      http
-        //跨域配置开始GlobalCorsConfig
-        .cors().disable()
-        .cors()
-        .and()
-        .authorizeRequests()
-        .requestMatchers(CorsUtils::isPreFlightRequest)
-        .permitAll().and()
-        .authorizeRequests()
-        .antMatchers("/product/**").access("#oauth2.hasScope('PRODUCT_PAI')");
-    }
-
-  }
-
-
-  /**
-   * 商品资源服务器的资源
+   *系统服务器资源
    */
   @EnableResourceServer
   @Configuration

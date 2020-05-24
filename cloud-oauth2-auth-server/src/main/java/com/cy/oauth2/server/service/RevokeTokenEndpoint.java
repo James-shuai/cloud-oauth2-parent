@@ -1,6 +1,6 @@
-//package com.mengxuegu.oauth2.server.service;
+//package com.cy.oauth2.server.service;
 //
-//import com.mengxuegu.base.result.MengxueguResult;
+//import com.cy.base.result.ResultData;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.beans.factory.annotation.Qualifier;
 //import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration;
@@ -25,9 +25,9 @@
 //    public Object revokeToken(HttpServletRequest request) {
 //        String access_token = request.getParameter("access_token");
 //        if (consumerTokenServices.revokeToken(access_token)){
-//            return MengxueguResult.ok("注销成功");
+//            return ResultData.ok("注销成功");
 //        }else{
-//            return MengxueguResult.build(403,"注销失败");
+//            return ResultData.build(403,"注销失败");
 //        }
 //    }
 //

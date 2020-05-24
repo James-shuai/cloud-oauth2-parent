@@ -64,7 +64,7 @@ public class ResultData {
 
 
   /**
-   * JSON字符串转成 MengxueguResult 对象
+   * JSON字符串转成 ResultData 对象
    * @param json
    * @return
    */

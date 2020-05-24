@@ -20,7 +20,7 @@ import java.io.IOException;
 @Configuration
 public class TokenConfig {
 
-  public static final String SIGNING_KEY="mengxuegu-key";
+  public static final String SIGNING_KEY="cloud-oauth2-key";
   @Autowired
   private RedisConnectionFactory redisConnectionFactory;
   /**

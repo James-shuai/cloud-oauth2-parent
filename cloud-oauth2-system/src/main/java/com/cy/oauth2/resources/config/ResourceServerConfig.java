@@ -26,7 +26,7 @@ import org.springframework.web.cors.CorsUtils;
 @EnableGlobalMethodSecurity(prePostEnabled = true) //开启方法级别权限控制
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
-  public static final String RESOURCE_ID = "product-server";
+  public static final String RESOURCE_ID = "system-server";
   /**
    * 密码加密
    * @return
@@ -54,9 +54,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     //请求认证服务器校验地址
     service.setCheckTokenEndpointUrl("http://localhost:8090/auth/oauth/check_token");
     //客户端Id
-    service.setClientId("mengxuegu-pc");
+    service.setClientId("cloud-pc");
     //客服端秘钥
-    service.setClientSecret("mengxuegu-secret");
+    service.setClientSecret("cloud-secret");
     return service;
   }*/
 

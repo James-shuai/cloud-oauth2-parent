@@ -56,13 +56,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     //内存方式管理客户端信息
     /*clients
       .inMemory()
-      .withClient("mengxuegu-pc") //客户端ID
-      .secret(passwordEncoder.encode("mengxuegu-secret")) //客服端秘钥 加密
+      .withClient("cloud-pc") //客户端ID
+      .secret(passwordEncoder.encode("cloud-secret")) //客服端秘钥 加密
       .resourceIds("product-server") //资源服务器Id 针对微服务名称
       .authorizedGrantTypes("authorization_code", "password", "implicit", "client_credentials", "refresh_token")//授权类型
       .scopes("all") //授权范围标识 那部分资源可以访问（all是标识，不是全部资源）
       .autoApprove(false) // false 跳转到授权页面手动点击授权，true 不需要手动点击授权
-      .redirectUris("http://www.mengxuegu.com/") //客户端回调地址
+      .redirectUris("http://www.cy925.top/") //客户端回调地址
       .accessTokenValiditySeconds(60*60*8) //访问令牌的有效时长 默认12小时
       .refreshTokenValiditySeconds(60*60*24*60) //刷新令牌有效时长 默认30天
     ;*/

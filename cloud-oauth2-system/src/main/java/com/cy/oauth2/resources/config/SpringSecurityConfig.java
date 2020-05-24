@@ -1,4 +1,4 @@
-package com.cy.oauth2.resources.config;//package com.mengxuegu.oauth2.resources.config;
+package com.cy.oauth2.resources.config;//package com.cy.oauth2.resources.config;
 //
 //import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 //import org.springframework.security.config.annotation.web.builders.HttpSecurity;

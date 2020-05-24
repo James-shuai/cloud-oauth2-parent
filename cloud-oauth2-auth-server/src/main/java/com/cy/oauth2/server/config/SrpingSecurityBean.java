@@ -23,7 +23,7 @@ import javax.sql.DataSource;
 public class SrpingSecurityBean {
 
 
-  public static final String SIGNING_KEY="mengxuegu-key";
+  public static final String SIGNING_KEY="cloud-oauth2-key";
 
   /**
    * 密码加密

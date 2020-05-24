@@ -53,7 +53,7 @@ public class SysPermissionServiceImpl extends ServiceImpl<SysPermissionMapper, S
     public boolean deleteRolePermission(String id) {
         int isOk = sysPermissionMapper.delete(new QueryWrapper<SysPermission>().eq("id", id));
         isOk+=sysPermissionMapper.deleteRolePermission(id);
-        if (isOk>1){
+        if (isOk>0){
             return true;
         }
         return false;

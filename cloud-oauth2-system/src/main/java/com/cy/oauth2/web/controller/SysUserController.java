@@ -116,7 +116,7 @@ public class SysUserController {
     }
 
     @RequestMapping("/delUser")
-    @PreAuthorize("hasAnyAuthority('sys:user:del')")
+    @PreAuthorize("hasAnyAuthority('sys:user:delete')")
     public Object delUser(@RequestBody String request){
         try {
             JSONObject jsonObject = JSON.parseObject(request);

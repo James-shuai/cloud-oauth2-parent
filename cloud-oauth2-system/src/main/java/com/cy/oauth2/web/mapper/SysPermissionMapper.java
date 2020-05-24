@@ -27,7 +27,10 @@ public interface SysPermissionMapper extends BaseMapper<SysPermission> {
     "where sp.type=1 and su.id=#{userid}")
   List<SysPermission> findByUserIds(@Param("userid") Long userid);
 
-  @Delete("delete sys_role_permission where permission_id=#{id}")
+  @Delete("delete from sys_role_permission where permission_id=#{id}")
     int deleteRolePermission(@Param("id") String id);
+
+  @Select("select count(1) from sys_role_permission where permission_id=#{id}")
+    int RolePermissionCount(@Param("id") String id);
 
 }

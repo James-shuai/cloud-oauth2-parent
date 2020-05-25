@@ -12,22 +12,22 @@
 
 觉得还可以的话 请给一个 Star 吧
 
-一、用到技术：
+    一、用到技术：
 
-1、Maven
+    1、Maven
 
-2、Spring Cloud Oauth2
+    2、Spring Cloud Oauth2
 
-3、Spring Security
+    3、Spring Security
 
-4、Mybatis Plus
+    4、Mybatis Plus
 
-二、主要完成：
+    二、主要完成：
 
-1、菜单列表、新增、修改、删除、查单条
+    1、菜单列表、新增、修改、删除、查单条
 
-2、角色列表、新增、修改、删除、查单条
+    2、角色列表、新增、修改、删除、查单条
 
-3、用户列表、新增、修改、删除、查单条
+    3、用户列表、新增、修改、删除、查单条
 
-三、部署打包方式采用 Docker 容器部署
+    三、部署打包方式采用 Docker 容器部署

@@ -5,13 +5,27 @@ spring:
   application:
     name: zuul-gateway
   redis:
-    host: localhost
+    host: 127.0.0.1
     password: 123456
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/ceshiauto?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 数据源其他配置, 在 DruidConfig配置类中手动绑定
+    initialSize: 8
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:6001/eureka/
+      defaultZone: http://127.0.0.1:6001/eureka/
   instance:
     instanceId: ${spring.application.name}:${server.port} # 指定实例ID,页面会显示主机名
     preferIpAddress: true #访问路径可以显示IP地址

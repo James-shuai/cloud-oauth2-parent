@@ -16,7 +16,7 @@ import java.util.List;
 
 @Data
 public class SysUser implements UserDetails, Serializable {
-
+    private static final long serialVersionUID = 1L;
     @TableId(type = IdType.AUTO)
     private Long id;
 
@@ -24,6 +24,8 @@ public class SysUser implements UserDetails, Serializable {
      * 用户名 
      */
     private String username;
+    private String unionid;
+
     /**
      * 密码，加密存储
      */

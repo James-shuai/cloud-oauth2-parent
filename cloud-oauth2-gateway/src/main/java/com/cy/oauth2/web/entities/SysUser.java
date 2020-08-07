@@ -1,34 +1,32 @@
 package com.cy.oauth2.web.entities;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 import org.apache.commons.collections.CollectionUtils;
 import org.assertj.core.util.Lists;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 @Data
-public class SysUser implements UserDetails {
+public class SysUser implements UserDetails, Serializable {
     private static final long serialVersionUID = 1L;
-    @TableId(type = IdType.AUTO)
     private Long id;
 
     /**
-     * 用户名
+     * 用户名 
      */
     private String username;
+    private String unionid;
+
     /**
      * 密码，加密存储
      */
     private String password;
-    private String unionid;
 
     /**
      * 帐户是否过期(true(1) 未过期，false(0)已过期)
@@ -67,18 +65,15 @@ public class SysUser implements UserDetails {
      * 邮箱
      */
     private String email;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createDate;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateDate;
 
     /**
      * 拥有权限集合
      */
-    @TableField(exist = false) //该属性不是数据库表字段
     private Collection<? extends GrantedAuthority> authorities;
 
-    // 父接口认证方法 start
+        // 父接口认证方法 start
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return this.authorities;
@@ -108,12 +103,10 @@ public class SysUser implements UserDetails {
     /**
      * 拥有角色集合
      */
-    @TableField(exist = false)
     private List<SysRole> roleList = Lists.newArrayList();
     /**
      * 获取所有角色id
      */
-    @TableField(exist = false)
     private List<Long> roleIds = Lists.newArrayList();
     public List<Long> getRoleIds() {
         if(CollectionUtils.isNotEmpty(roleList)) {
@@ -125,6 +118,5 @@ public class SysUser implements UserDetails {
         return roleIds;
     }
 
-    @TableField(exist = false)
     private List<SysPermission> permissions = Lists.newArrayList();
 }

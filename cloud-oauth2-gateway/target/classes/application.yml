@@ -7,6 +7,20 @@ spring:
   redis:
     host: 39.96.167.196
     password: yuanshuai
+  datasource:
+    url: jdbc:mysql://cdb-6z1kjh7u.bj.tencentcdb.com:10217/ceshiauto?useUnicode=true&characterEncoding=utf8
+    username: auth
+    password: yuanshuai0925
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 数据源其他配置, 在 DruidConfig配置类中手动绑定
+    initialSize: 8
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
 
 eureka:
   client:

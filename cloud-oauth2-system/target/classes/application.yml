@@ -1,5 +1,6 @@
 server:
   port: 8082
+  max-http-header-size: 102400
 spring:
   jackson:
     time-zone: GMT+8
@@ -8,7 +9,7 @@ spring:
     password: yuanshuai
   datasource:
     url: jdbc:mysql://cdb-6z1kjh7u.bj.tencentcdb.com:10217/ceshiauto?useUnicode=true&characterEncoding=utf8
-    username: root
+    username: auth
     password: yuanshuai0925
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource

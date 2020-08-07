@@ -7,10 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-oauth2-base" />
-        <module name="cloud-oauth2-eureka" />
-        <module name="cloud-oauth2-gateway" />
         <module name="cloud-oauth2-system" />
+        <module name="cloud-oauth2-eureka" />
         <module name="cloud-oauth2-auth-server" />
+        <module name="cloud-oauth2-gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

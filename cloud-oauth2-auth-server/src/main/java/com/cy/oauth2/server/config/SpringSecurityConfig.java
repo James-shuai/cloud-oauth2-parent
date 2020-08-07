@@ -24,12 +24,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
   private PasswordEncoder passwordEncoder;
   @Autowired
   private UserDetailsService customUserDetailsService;
-  //自定义认证成功处理器
-  @Autowired
-  AuthenticationSuccessHandler customAuthenticationSuccessHandler;
-  //自定义认证失败处理器
-  @Autowired
-  AuthenticationFailureHandler customAuthenticationFailureHandler;
 
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {

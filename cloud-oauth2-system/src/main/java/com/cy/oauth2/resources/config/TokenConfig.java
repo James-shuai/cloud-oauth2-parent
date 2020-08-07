@@ -54,9 +54,9 @@ public class TokenConfig {
 //    tokenStore.setSerializationStrategy(new JdkSerializationStrategy());
 //    return tokenStore;
     //通过Redis管理令牌
-//    return new RedisTokenStore(redisConnectionFactory);
+    return new RedisTokenStore(redisConnectionFactory);
 //    //通过JWT 管理令牌
-    return new JwtTokenStore(jwtAccessTokenConverter());
+//    return new JwtTokenStore(jwtAccessTokenConverter());
   }
 
 

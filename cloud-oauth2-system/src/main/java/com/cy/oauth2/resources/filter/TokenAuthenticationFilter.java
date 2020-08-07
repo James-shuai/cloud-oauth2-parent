@@ -36,14 +36,14 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
       //转成json对象
       JSONObject jsonObject = JSON.parseObject(authTokenJson);
       //用户信息（用户名）
-      Object principal = jsonObject.get("principal");
+      JSONObject principal = (JSONObject)jsonObject.get("principal");
       //请求详情
       Object details = jsonObject.get("details");
       //用户权限
       String authorities = ArrayUtils.toString(jsonObject.getJSONArray("authorities").toArray());
       List<GrantedAuthority> grantedAuthorities = AuthorityUtils.commaSeparatedStringToAuthorityList(authorities);
       //手动构建一个 UsernamePasswordAuthenticationToken 对象 SpringSecurity 会自动进行权限判断
-      UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(principal,null,grantedAuthorities);
+      UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(principal.get("username"),null,grantedAuthorities);
       authenticationToken.setDetails(details);
 
       //将对象传给安全上下文 自动判断权限 同时也可以获取用户信息

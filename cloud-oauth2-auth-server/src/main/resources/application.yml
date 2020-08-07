@@ -1,15 +1,16 @@
 server:
   port: 8090
+  max-http-header-size: 102400
   servlet:
     context-path: /auth
 spring:
   redis:
-    host: localhost
+    host: 127.0.0.1
     password: 123456
   datasource:
-    url: jdbc:mysql://localhost:3306/ceshiauto?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/ceshiauto?useUnicode=true&characterEncoding=utf8
     username: root
-    password: yuanshuai0925
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     # 数据源其他配置, 在 DruidConfig配置类中手动绑定
@@ -26,7 +27,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:6001/eureka/
+      defaultZone: http://127.0.0.1:6001/eureka/
   instance:
     instanceId: ${spring.application.name}:${server.port} # 指定实例ID,页面会显示主机名
     preferIpAddress: true #访问路径可以显示IP地址

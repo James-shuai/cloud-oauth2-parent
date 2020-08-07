@@ -70,8 +70,8 @@ public class ResourceServerConfig {
         .requestMatchers(CorsUtils::isPreFlightRequest)
         .permitAll().and()
         .authorizeRequests()
-        .antMatchers("/system/**").access("#oauth2.hasScope('SYSTEM_API')")
               .antMatchers("/system/weChat/**").permitAll()
+        .antMatchers("/system/**").access("#oauth2.hasScope('SYSTEM_API')")
       ;
     }
 

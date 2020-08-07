@@ -77,9 +77,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
       .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)//spring security 不会使用也不会创建session实例
       .and()
       .authorizeRequests()
+      .antMatchers("/system/weChat/**").permitAll()
       //所有请求都需要有 all 范围
       .antMatchers("/**").access("#oauth2.hasAnyScope('SYSTEM_API')")
-      .antMatchers("/system/weChat/**").permitAll()
+
     ;
   }
 }

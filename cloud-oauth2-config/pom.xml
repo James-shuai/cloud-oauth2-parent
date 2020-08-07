@@ -59,6 +59,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--启动类-->
+                <configuration>
+                    <mainClass>com.cy.cloudoauth2config.CloudOauth2ConfigApplication</mainClass>
+                </configuration>
+
             </plugin>
         </plugins>
     </build>

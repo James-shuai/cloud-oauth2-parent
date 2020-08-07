@@ -10,24 +10,26 @@
 
 [前端项目原创作者地址](https://github.com/lin-xin/vue-manage-system.git)
 
-觉得还可以的话 请给一个 Star 吧
 
     一、用到技术：
 
-    1、Maven
+    1、Spring Cloud（Eureka、Feign、Spring-Cloud-Config、Zuul）
 
-    2、Spring Cloud Oauth2
+    2、Spring Security Oauth2
 
-    3、Spring Security
+    3、Redis
 
-    4、Mybatis Plus
+    4、RabbitMQ
+    
+    5、Mybatis Plus
+    
+    二、GitHub管理配置文件
+    配置文件地址：https://github.com/James-shuai/cloud-oauth2-test.git
 
-    二、主要完成：
+    三、主要完成：
 
-    1、菜单列表、新增、修改、删除、查单条
+    1、登陆、登出、刷新Token、自动续签
 
-    2、角色列表、新增、修改、删除、查单条
-
-    3、用户列表、新增、修改、删除、查单条
-
-    三、部署打包方式采用 Docker 容器部署
+    2、系统配置
+    
+    四、部署打包方式采用 Docker 容器部署

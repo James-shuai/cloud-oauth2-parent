@@ -24,6 +24,7 @@
     5、Mybatis Plus
     
     二、GitHub管理配置文件
+    
     配置文件地址：https://github.com/James-shuai/cloud-oauth2-test.git
 
     三、主要完成：

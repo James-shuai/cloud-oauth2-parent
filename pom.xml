@@ -13,6 +13,7 @@
     <module>cloud-oauth2-eureka</module>
     <module>cloud-oauth2-gateway</module>
     <module>cloud-oauth2-system</module>
+    <module>cloud-oauth2-config</module>
   </modules>
 
   <packaging>pom</packaging>

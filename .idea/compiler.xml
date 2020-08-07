@@ -7,13 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-oauth2-base" />
-        <module name="cloud-oauth2-system" />
         <module name="cloud-oauth2-eureka" />
-        <module name="cloud-oauth2-auth-server" />
         <module name="cloud-oauth2-gateway" />
+        <module name="cloud-oauth2-config" />
+        <module name="cloud-oauth2-system" />
+        <module name="cloud-oauth2-auth-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cloud-oauth-config" target="1.8" />
       <module name="mengxuegu-cloud-oauth2-resource-product" target="1.8" />
       <module name="mengxuegu-cloud-oauth2-sso-client1" target="1.8" />
       <module name="mengxuegu-cloud-oauth2-sso-client2" target="1.8" />
@@ -22,8 +24,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cloud-oauth-config" options="-parameters" />
       <module name="cloud-oauth2-auth-server" options="-parameters" />
       <module name="cloud-oauth2-base" options="-parameters" />
+      <module name="cloud-oauth2-config" options="-parameters" />
       <module name="cloud-oauth2-eureka" options="-parameters" />
       <module name="cloud-oauth2-gateway" options="-parameters" />
       <module name="cloud-oauth2-system" options="-parameters" />

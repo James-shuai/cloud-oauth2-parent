@@ -1,0 +1,28 @@
+server:
+  port: 8070
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/James-shuai/cloud-oauth2-test
+          username: xxxxxx
+          password: xxxxxx
+          #超时时间
+          timeout: 5
+            #分支
+          default-label: master
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:6001/eureka/
+  instance:
+    instanceId: ${spring.application.name}:${server.port} # 指定实例ID,页面会显示主机名
+    preferIpAddress: true #访问路径可以显示IP地址
+# 日志级别，会打印sql语句
+logging:
+  level:
+    com.cy.oauth2.web.mapper: debug

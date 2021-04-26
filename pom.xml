@@ -35,7 +35,7 @@
     <fastjson.version>1.2.58</fastjson.version>
     <commons-lang.version>2.6</commons-lang.version>
     <commons-collections.version>3.2.2</commons-collections.version>
-    <commons-io.version>2.6</commons-io.version>
+    <commons-io.version>2.7</commons-io.version>
     <!-- 定义版本号, 子模块直接引用-->
     <cloud-security.version>1.0-SNAPSHOT</cloud-security.version>
   </properties>
